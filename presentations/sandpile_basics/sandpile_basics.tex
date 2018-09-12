@@ -5,7 +5,7 @@
 %\usepackage{amsmath}
 \graphicspath{ {./images/} }
 \usepackage{subcaption}
-
+\usepackage{bbm}
 \usepackage{enumitem}
 \setlist{itemsep=10pt}
 \setitemize{label=\usebeamerfont*{itemize item}%
@@ -170,10 +170,10 @@ $n_i < |e_{v_i}| $ $ \forall $ $i$.
 \begin{frame}
 \frametitle{A Sink Vertex}
   \begin{itemize}
-    \item A vertex $v$ of $G$ with no outbound edges ($e_v = {}$) is known as a \textbf{sink}.
-    \item ``Sink'' vertices \textbf{never} fire.
+    \item A vertex $v$ of $G$ with no outbound edges ($e_v = 0$) is known as a \textbf{sink}.
+    \item Sink vertices \textbf{never} fire.
     \item If every vertex has a direct path to a sink it is the \textbf{universal} sink.
-    \item Every configuration on a directed graph with a universal sink stabilizes.
+    \item \textbf{Every} configuration on a directed graph with a universal sink stabilizes.
     \item From now on, all graphs will have a universal sink.
   \end{itemize}
 \end{frame}
@@ -272,7 +272,7 @@ $n_i < |e_{v_i}| $ $ \forall $ $i$.
 \begin{itemize}
 \item Let $L_i$ be the row of the reduced Laplacian corresponding to $v_i$
 \item If vertex $v_j$ fires at time/iteration $t$:
-\[ c_{t+1} = c_t - v_j \]
+\[ c_{t+1} = c_t - L_j \]
 \item $L_4 = (0,-1,0,-1,4,-1,0,-1,0)$
 \end{itemize}
 
@@ -300,11 +300,125 @@ $c_t = (3,0,2,2,4,6,8,8,7)$  & $c_{t+1} = (3,1,2,3,0,7,8,9,7)$
 \end{frame}
 
 
+\begin{frame}
+\frametitle{Firing History}
+  \begin{itemize}
+    \item The vertices fired were: [0, 1, 2, 1, 0, 2, 3, 3, 4, 4, 1, 5, 4, 5, 6, 3, 0, 6, 7, 7, 4, 5, 2, 1, 7, 6, 3, 4, 8, 8, 5, 7, 8]
+    \item The \textbf{history} is the number of times each vertex fired in a stabilization:\\
+    \{0: 3, 1: 4, 2: 3, 3: 4, 4: 5, 5: 4, 6: 3, 7: 4, 8: 3\}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{An Alternate Stabilizing Flipbook}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Firing History}
+  \begin{itemize}
+    \item The vertices fired were: [8, 7, 6, 7, 8, 6, 5, 5, 4, 4, 7, 3, 4, 3, 2, 5, 8, 2, 1, 1, 4, 3, 6, 7, 1, 2, 5, 4, 0, 0, 3, 1, 0]
+    \item \textbf{history}: \\
+
+    \{0: 3, 1: 4, 2: 3, 3: 4, 4: 5, 5: 4, 6: 3, 7: 4, 8: 3\}
+
+    \item !
+    \item From a given starting configuration, all stabilizations reach the same \textbf{final}
+    configuration
+    \item Each vertex fires the \textbf{same number of times} in all stabilizations
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Chip Addition Operator}
+  \begin{itemize}
+  \item If $c$ is a configuration, let $c^o$ denote its stabilization.
+  \item Let $\mathbbm{1}_{v_i}$ denote the configuration with 1 chip on $v_i$ and $0$ on all others.
+  \item The \textbf{chip addition operator}, $E_{v_i}(c)$ adds one chip to $c$ on the vertex $v_i$, then stabilizes: \[E_{v_i}(c) = (c+\mathbbm{1}_{v_i})^o\]
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Chip Addition Operator Example}
+  \begin{itemize}
+    \item $c = (3,3,3,3,3,3,3,3,3)$
+    \item $E_4(c) = (1,3,1,3,0,3,1,3,1)$
+    \item History: \{0: 1, 1: 1, 2: 1, 3: 1, 4: 2, 5: 1, 6: 1, 7: 1, 8: 1\}
+  \end{itemize}
+
+  \begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.4\linewidth}
+      \includegraphics[width=\linewidth]{sandpile_chip_fire_0}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\linewidth}
+      \includegraphics[width=\linewidth]{sandpile_chip_fire_1}
+    \end{subfigure}
+    %\caption{$c = (3,3,3,3,3,3,3,3,3)$, $E_4(c) = (1,3,1,3,0,3,1,3,1)$}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Chip Addition Operator Composition}
+
+  \begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.3\linewidth}
+      \includegraphics[width=\linewidth]{sandpile_chip_fire_0}
+      \caption{$c$}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+      \includegraphics[width=\linewidth]{sandpile_chip_fire_1}
+      \caption{$E_4(c)$}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+      \includegraphics[width=\linewidth]{sandpile_chip_fire_2}
+      \caption{$E_1(E_4(c))$}
+    \end{subfigure}
+    %\caption{$c = (3,3,3,3,3,3,3,3,3)$, $E_4(c) = (1,3,1,3,0,3,1,3,1)$}
+  \end{figure}
+
+  \begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.3\linewidth}
+      \includegraphics[width=\linewidth]{sandpile_chip_fire_0}
+      \caption{$c$}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+      \includegraphics[width=\linewidth]{sandpile_chip_fire_1p}
+      \caption{$E_1(c)$}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\linewidth}
+      \includegraphics[width=\linewidth]{sandpile_chip_fire_2p}
+      \caption{$E_4(E_1(c))$}
+    \end{subfigure}
+    %\caption{$c = (3,3,3,3,3,3,3,3,3)$, $E_4(c) = (1,3,1,3,0,3,1,3,1)$}
+  \end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\textit{Abelian} Sandpile Model}
+  \begin{itemize}
+    \item Move chips on a directed graph
+    \item Stabilization is well defined
+    \item Chip firing operators commute
+    \item Sink vertex
+    \item Next up, self-optimized criticality
+  \end{itemize}
+\end{frame}
+
+
 \end{document}
 
 [0, 1, 2, 1, 0, 2, 3, 3, 4, 4, 1, 5, 4, 5, 6, 3, 0, 6, 7, 7, 4, 5, 2, 1, 7, 6, 3, 4, 8, 8, 5, 7, 8]
 {0: 3, 1: 4, 2: 3, 3: 4, 4: 5, 5: 4, 6: 3, 7: 4, 8: 3}
-
+[8, 7, 6, 7, 8, 6, 5, 5, 4, 4, 7, 3, 4, 3, 2, 5, 8, 2, 1, 1, 4, 3, 6, 7, 1, 2, 5, 4, 0, 0, 3, 1, 0]
+{0: 3, 1: 4, 2: 3, 3: 4, 4: 5, 5: 4, 6: 3, 7: 4, 8: 3}
+{0: 1, 1: 1, 2: 1, 3: 1, 4: 2, 5: 1, 6: 1, 7: 1, 8: 1}
 
 \begin{frame}
 \frametitle{Firing ``History''}

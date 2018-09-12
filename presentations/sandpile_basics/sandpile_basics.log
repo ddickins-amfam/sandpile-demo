@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  11 SEP 2018 16:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  12 SEP 2018 14:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1048,6 +1048,13 @@ Package caption Info: Hyperref support is turned off
 \c@subfigure=\count154
 \c@subtable=\count155
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/bbm-macros/bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip57
@@ -1402,6 +1409,93 @@ Package pdftex.def Info: ./images/sandpile_13.jpg used on input line 293.
  <./images/sandpile_12.jpg> <./images/sandpile_13.jpg>] [14
 
 ]
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 310
+.
+LaTeX Font Info:    No file OMScmss.fd. on input line 310.
+
+
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 310.
+
+[15
+
+] [16
+
+] [17
+
+]
+LaTeX Font Info:    Try loading font information for U+bbm on input line 341.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+) [18
+
+] <./images/sandpile_chip_fire_0.jpg, id=495, 722.7pt x 722.7pt>
+File: ./images/sandpile_chip_fire_0.jpg Graphic file (type jpg)
+
+<use ./images/sandpile_chip_fire_0.jpg>
+Package pdftex.def Info: ./images/sandpile_chip_fire_0.jpg used on input line 3
+61.
+(pdftex.def)             Requested size: 122.91406pt x 122.9125pt.
+
+<./images/sandpile_chip_fire_1.jpg, id=496, 722.7pt x 722.7pt>
+File: ./images/sandpile_chip_fire_1.jpg Graphic file (type jpg)
+
+<use ./images/sandpile_chip_fire_1.jpg>
+Package pdftex.def Info: ./images/sandpile_chip_fire_1.jpg used on input line 3
+61.
+(pdftex.def)             Requested size: 122.91406pt x 122.9125pt.
+ [19
+
+ <./images/sandpile_chip_fire_0.jpg> <./images/sandpile_chip_fire_1.jpg>]
+File: ./images/sandpile_chip_fire_0.jpg Graphic file (type jpg)
+ <use ./images/sandpile_chip_fire_0.jpg>
+Package pdftex.def Info: ./images/sandpile_chip_fire_0.jpg used on input line 4
+00.
+(pdftex.def)             Requested size: 92.1879pt x 92.17886pt.
+File: ./images/sandpile_chip_fire_1.jpg Graphic file (type jpg)
+
+<use ./images/sandpile_chip_fire_1.jpg>
+Package pdftex.def Info: ./images/sandpile_chip_fire_1.jpg used on input line 4
+00.
+(pdftex.def)             Requested size: 92.1879pt x 92.17886pt.
+
+<./images/sandpile_chip_fire_2.jpg, id=523, 722.7pt x 722.7pt>
+File: ./images/sandpile_chip_fire_2.jpg Graphic file (type jpg)
+
+<use ./images/sandpile_chip_fire_2.jpg>
+Package pdftex.def Info: ./images/sandpile_chip_fire_2.jpg used on input line 4
+00.
+(pdftex.def)             Requested size: 92.1879pt x 92.17886pt.
+File: ./images/sandpile_chip_fire_0.jpg Graphic file (type jpg)
+
+<use ./images/sandpile_chip_fire_0.jpg>
+Package pdftex.def Info: ./images/sandpile_chip_fire_0.jpg used on input line 4
+00.
+(pdftex.def)             Requested size: 92.1879pt x 92.17886pt.
+
+<./images/sandpile_chip_fire_1p.jpg, id=524, 722.7pt x 722.7pt>
+File: ./images/sandpile_chip_fire_1p.jpg Graphic file (type jpg)
+
+<use ./images/sandpile_chip_fire_1p.jpg>
+Package pdftex.def Info: ./images/sandpile_chip_fire_1p.jpg used on input line 
+400.
+(pdftex.def)             Requested size: 92.1879pt x 92.17886pt.
+
+<./images/sandpile_chip_fire_2p.jpg, id=525, 722.7pt x 722.7pt>
+File: ./images/sandpile_chip_fire_2p.jpg Graphic file (type jpg)
+
+<use ./images/sandpile_chip_fire_2p.jpg>
+Package pdftex.def Info: ./images/sandpile_chip_fire_2p.jpg used on input line 
+400.
+(pdftex.def)             Requested size: 92.1879pt x 92.17886pt.
+ [20
+
+ <./images/sandpile_chip_fire_2.jpg> <./images/sandpile_chip_fire_1p.jpg> <./im
+ages/sandpile_chip_fire_2p.jpg>]
+[21
+
+]
 \tf@nav=\write6
 \openout6 = `sandpile_basics.nav'.
 
@@ -1411,11 +1505,11 @@ Package pdftex.def Info: ./images/sandpile_13.jpg used on input line 293.
 \tf@snm=\write8
 \openout8 = `sandpile_basics.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 303.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 303.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 415.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 415.
  (./sandpile_basics.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 303.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 303.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 415.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 415.
 Package rerunfilecheck Info: File `sandpile_basics.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1423,32 +1517,38 @@ Package rerunfilecheck Info: File `sandpile_basics.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 303.
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 415.
  ) 
 Here is how much of TeX's memory you used:
- 18319 strings out of 493014
- 347331 string characters out of 6133351
- 420633 words of memory out of 5000000
- 21408 multiletter control sequences out of 15000+600000
- 14178 words of font info for 52 fonts, out of 8000000 for 9000
+ 18425 strings out of 493014
+ 349559 string characters out of 6133351
+ 420812 words of memory out of 5000000
+ 21480 multiletter control sequences out of 15000+600000
+ 15328 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,15n,55p,395b,629s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
-></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
-usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></u
-sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></us
-r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr
-/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
-ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/loc
-al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on sandpile_basics.pdf (14 pages, 679593 bytes).
+ </Users/dxd036/Library/texlive/2018/texmf-var/fonts/pk/ljfour/public/bbm/bbm
+10.657pk></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cme
+x10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8
+.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.
+pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.p
+fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb
+></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb
+></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pf
+b>
+Output written on sandpile_basics.pdf (21 pages, 1210497 bytes).
 PDF statistics:
- 437 PDF objects out of 1000 (max. 8388607)
- 389 compressed objects within 4 object streams
- 29 named destinations out of 1000 (max. 500000)
- 93 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 634 PDF objects out of 1000 (max. 8388607)
+ 570 compressed objects within 6 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 118 words of extra memory for PDF output out of 10000 (max. 10000000)
 

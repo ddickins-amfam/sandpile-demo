@@ -4,56 +4,10 @@ import matplotlib.pyplot as plt
 # import matplotlib
 import networkx as nx
 from sandpile import Sandpile, grid_edges
+from presentation_template_strings import presentation_start, presentation_insert, presentation_end, presentation_history
 
 
-presentation_start = r"""
-\documentclass{beamer}
 
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-%\usepackage{amsmath}
-\graphicspath{ {./images/} }
-\usepackage{subcaption}
-
-\usepackage{enumitem}
-\setlist{itemsep=10pt}
-\setitemize{label=\usebeamerfont*{itemize item}%
-  \usebeamercolor[fg]{itemize item}
-  \usebeamertemplate{itemize item}}
-
-%Information to be included in the title page:
-\title{Stabilization Flipbook}
-%\author{Anonymous}
-%\institute{ShareLaTeX}
-\date{2018}
-
-\begin{document}
-\frame{\titlepage}
-"""
-
-
-presentation_insert = r"""
-\begin{frame}
-  \begin{figure}[h!]
-    \centering
-      \includegraphics[scale=0.25]{sandpile_%i}
-  \end{figure}
-\end{frame}
-"""
-
-presentation_history = r"""
-\begin{frame}
-
-%s
-
-\[
-\{%s\}
-\]
-\end{frame}
-"""
-presentation_end = r"""
-\end{document}
-"""
 
 
 
@@ -155,13 +109,53 @@ def main(n,filepath):
 
     print(hist)
     presentation_images = '\n'.join(presentation_images)
-    presentation = '\n'.join([presentation_start,presentation_images,presentation_history%(history,hist),presentation_end])
+    presentation = '\n'.join([presentation_start,presentation_images,presentation_end])#,presentation_history%(history,hist)
     with open('presentations/sandpile_basics/sandpile_flipbook.tex','w') as outfile:
         outfile.write(presentation)
 
+    G.set_state(s)
+    i = 1
+    history1 = []
+    presentation_images = [presentation_insert%(0,)]
+    for node1 in history:
+        tofire = 8-node1
+        G.fire_node(tofire)
+        draw_state(G,pos,nodelist,edgelist,filepath.format(-i),figsize=(10,10))
+        presentation_images.append(presentation_insert%(-i,))
+        i+=1
+        history1.append(tofire)
+    print(history1)
+    hist = {}
+    for node1 in history1:
+        try:
+            hist[node1] += 1
+        except KeyError:
+            hist[node1] = 1
 
+    print(hist)
+    presentation_images = '\n'.join(presentation_images)
+    presentation = '\n'.join([presentation_start,presentation_images,presentation_end])#,presentation_history%(history1,hist)
+    with open('presentations/sandpile_basics/sandpile_flipbook_1.tex','w') as outfile:
+        outfile.write(presentation)
 
-
+    s1 = {i:3 for i in range(n**2)}
+    G.set_state(s1)
+    draw_state(G,pos,nodelist,edgelist,filepath.format('chip_fire_0')
+            ,figsize=(10,10))
+    history = G.add_chip(4)
+    draw_state(G,pos,nodelist,edgelist,filepath.format('chip_fire_1')
+            ,figsize=(10,10))
+    print(history)
+    G.add_chip(1)
+    draw_state(G,pos,nodelist,edgelist,filepath.format('chip_fire_2')
+            ,figsize=(10,10))
+    G.set_state(s1)
+    history = G.add_chip(1)
+    draw_state(G,pos,nodelist,edgelist,filepath.format('chip_fire_1p')
+            ,figsize=(10,10))
+    G.add_chip(4)
+    draw_state(G,pos,nodelist,edgelist,filepath.format('chip_fire_2p')
+            ,figsize=(10,10))
 
 if __name__ == '__main__':
     # matplotlib.use('Agg')
